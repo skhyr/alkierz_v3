@@ -1,15 +1,9 @@
-use crate::get_db_pool;
-use actix_web::{web::Data, App, HttpServer};
+use actix_web::{App, HttpServer};
 use dotenv::dotenv;
-use sqlx::{Pool, Postgres};
 use actix_cors::Cors;
-use actix_web::{get, web, HttpResponse, Responder, Scope};
-use serde::Serialize;
+use actix_web::{get, web, Responder, Scope};
 
-#[get("/status")]
-pub async fn status_check() -> impl Responder {
-    "live"
-}
+mod queries;
 
 pub async fn serve() -> std::io::Result<()> {
     dotenv().ok();
@@ -30,4 +24,11 @@ pub async fn serve() -> std::io::Result<()> {
 pub fn service() -> Scope {
     web::scope("/api/v1")
         .service(status_check)
+        .service(queries::service())
 }
+
+#[get("/status")]
+pub async fn status_check() -> impl Responder {
+    "live"
+}
+

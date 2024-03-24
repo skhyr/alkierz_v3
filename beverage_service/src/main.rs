@@ -16,7 +16,7 @@ use dotenv::dotenv;
 pub type Db = Pool<Postgres>;
 
 static DB_POOL: OnceLock<Pool<Postgres>> = OnceLock::new();
-async fn get_db_pool() -> Pool<Postgres> {
+pub async fn get_db_pool() -> Pool<Postgres> {
     DB_POOL.get().expect("Db Error").clone()
 }
 
