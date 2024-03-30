@@ -1,12 +1,9 @@
 use serde::{Deserialize, Serialize};
+use sqlx::FromRow;
 use uuid::Uuid;
 
 #[derive(Debug, Serialize, Deserialize)]
-pub struct Beverage {
+pub struct Shop {
     pub id: Uuid,
     pub name: String,
-    pub voltage: f64,
-    pub volume: f64,
-    pub price: Option<f64>,
-    pub image_url: Option<String>,
 }
