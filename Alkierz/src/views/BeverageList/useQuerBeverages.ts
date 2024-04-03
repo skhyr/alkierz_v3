@@ -6,7 +6,9 @@ const BE_URL = 'http://localhost:8000/api/v1'
 export const useQueryBeverages = () => {
   const query = useQuery({
     queryKey: ['beverages'],
-    queryFn: ()=> fetch(`${BE_URL}/beverages/`).then(res => res.json()) as Promise<Beverage[]>
+    queryFn: ()=> fetch(`${BE_URL}/beverages/`, {headers: {
+          "Content-Type": "application/json",
+        }}).then(res => res.json()) as Promise<Beverage[]>
   })
 
   return query
