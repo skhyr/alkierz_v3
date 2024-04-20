@@ -32,5 +32,7 @@ async fn main() -> std::io::Result<()> {
         .unwrap();
     let _ = DB_POOL.set(db_pool);
 
+    println!("server started");
+
     api::serve().await
 }

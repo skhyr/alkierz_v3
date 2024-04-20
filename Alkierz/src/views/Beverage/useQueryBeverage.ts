@@ -1,13 +1,15 @@
-import { useQuery } from "@tanstack/react-query"
-import { Beverage } from "../../types/Beverage"
-
-const BE_URL = 'http://localhost:8000/api/v1'
+import {useQuery} from '@tanstack/react-query';
+import {Beverage} from '../../types/Beverage';
+import {BE_URL} from '../../../BE_URL';
 
 export const useQueryBeverage = (id: string) => {
   const query = useQuery({
     queryKey: ['beverage', id],
-    queryFn: ()=> fetch(`${BE_URL}/beverages/${id}`).then(res => res.json()) as Promise<Beverage>
-  })
+    queryFn: () =>
+      fetch(`${BE_URL}/beverages/${id}`).then(res =>
+        res.json(),
+      ) as Promise<Beverage>,
+  });
 
-  return query
-}
+  return query;
+};

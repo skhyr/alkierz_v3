@@ -1,0 +1,52 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n            SELECT b.*, min(p.value) as price\n            FROM beverages b\n            LEFT JOIN prices p ON p.beverage_id = b.id\n            WHERE b.id = $1\n            GROUP BY b.id\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Uuid"
+      },
+      {
+        "ordinal": 1,
+        "name": "name",
+        "type_info": "Varchar"
+      },
+      {
+        "ordinal": 2,
+        "name": "voltage",
+        "type_info": "Float8"
+      },
+      {
+        "ordinal": 3,
+        "name": "volume",
+        "type_info": "Int4"
+      },
+      {
+        "ordinal": 4,
+        "name": "image_url",
+        "type_info": "Varchar"
+      },
+      {
+        "ordinal": 5,
+        "name": "price",
+        "type_info": "Float8"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Uuid"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      true,
+      null
+    ]
+  },
+  "hash": "2e6a1b144a5c2b0c65bf986ad062fc3eb5d5ce940a6e3b38f04ff050a7279c35"
+}

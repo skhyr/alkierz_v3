@@ -20,12 +20,12 @@ pub async fn serve() -> std::io::Result<()> {
 }
 
 pub fn service() -> Scope {
-    web::scope("/api/v1")
+    web::scope("/api")
         .service(status_check)
         .service(queries::service())
 }
 
-#[get("/status")]
+#[get("/health/")]
 pub async fn status_check() -> impl Responder {
     "live"
 }
