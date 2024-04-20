@@ -7,15 +7,18 @@ import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import {NavigationContainer} from '@react-navigation/native';
 import {MainStack} from './src/navigation/MainStack';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import {PaperProvider} from 'react-native-paper';
 
 function App(): React.JSX.Element {
   return (
     <GestureHandlerRootView>
-      <QueryClientProvider client={new QueryClient()}>
-        <NavigationContainer>
-          <MainStack />
-        </NavigationContainer>
-      </QueryClientProvider>
+      <PaperProvider>
+        <QueryClientProvider client={new QueryClient()}>
+          <NavigationContainer>
+            <MainStack />
+          </NavigationContainer>
+        </QueryClientProvider>
+      </PaperProvider>
     </GestureHandlerRootView>
   );
 }

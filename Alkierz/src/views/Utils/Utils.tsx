@@ -6,7 +6,10 @@ export const Utils = ({navigation}: any) => {
     <View>
       <Text>Utils</Text>
       <TouchableOpacity onPress={() => navigation.navigate('Counter')}>
-        <Text>Licznik shotów</Text>
+        <Text>Licznik Shotów</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Calculator')}>
+        <Text>Kalkulator Bani</Text>
       </TouchableOpacity>
     </View>
   );
