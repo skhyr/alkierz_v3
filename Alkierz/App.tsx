@@ -6,14 +6,17 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import {NavigationContainer} from '@react-navigation/native';
 import {MainStack} from './src/navigation/MainStack';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 function App(): React.JSX.Element {
   return (
-    <QueryClientProvider client={new QueryClient()}>
-      <NavigationContainer>
-        <MainStack />
-      </NavigationContainer>
-    </QueryClientProvider>
+    <GestureHandlerRootView>
+      <QueryClientProvider client={new QueryClient()}>
+        <NavigationContainer>
+          <MainStack />
+        </NavigationContainer>
+      </QueryClientProvider>
+    </GestureHandlerRootView>
   );
 }
 
