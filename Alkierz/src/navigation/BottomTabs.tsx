@@ -11,17 +11,17 @@ export const BottomTabs = () => {
       <Tabs.Screen
         name="Home"
         component={Home}
-        options={{headerShown: false}}
+        options={{headerShown: false, title: 'Strona Główna'}}
       />
       <Tabs.Screen
         name="Beverages"
         component={BeverageList}
-        options={{headerShown: false}}
+        options={{headerShown: false, title: 'Trunki'}}
       />
       <Tabs.Screen
         name="Utils"
         component={UtilsStack}
-        options={{headerShown: false}}
+        options={{headerShown: false, title: 'Narzędzia'}}
       />
     </Tabs.Navigator>
   );

@@ -22,18 +22,21 @@ export const Calculator = () => {
         keyboardType="numeric"
         value={volume}
         onChangeText={setVolume}
+        mode="outlined"
       />
       <TextInput
         label="Voltage (%)"
         keyboardType="numeric"
         value={voltage}
         onChangeText={setVoltage}
+        mode="outlined"
       />
       <TextInput
         label="Price"
         keyboardType="numeric"
         value={price}
         onChangeText={setPrice}
+        mode="outlined"
       />
       <Text style={styles.count}>{calcScore()?.toFixed(2)}</Text>
     </KeyboardAvoidingView>
@@ -41,7 +44,9 @@ export const Calculator = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    paddingHorizontal: 15,
+  },
   count: {
     alignSelf: 'center',
     fontSize: 80,

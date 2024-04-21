@@ -13,8 +13,16 @@ export const UtilsStack = () => {
         component={Utils}
         options={{headerShown: false}}
       />
-      <Stack.Screen name="Counter" component={Counter} />
-      <Stack.Screen name="Calculator" component={Calculator} />
+      <Stack.Screen
+        name="Counter"
+        component={Counter}
+        options={{title: 'Licznik Shotów'}}
+      />
+      <Stack.Screen
+        name="Calculator"
+        component={Calculator}
+        options={{title: 'Kalkulator Bani'}}
+      />
     </Stack.Navigator>
   );
 };

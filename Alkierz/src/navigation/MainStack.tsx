@@ -15,7 +15,7 @@ export const MainStack = () => {
       <Stack.Screen
         name="Beverage"
         component={Beverage}
-        options={{headerShown: false}}
+        options={{headerShown: true, title: ''}}
       />
     </Stack.Navigator>
   );

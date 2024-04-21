@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
-import {Button, Pressable, StyleSheet, Text, View} from 'react-native';
+import {Pressable, StyleSheet, Text, View} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {Button} from 'react-native-paper';
 
 export const Counter = () => {
   const [count, setCount] = useState(0);
@@ -19,21 +20,24 @@ export const Counter = () => {
     <View style={styles.container}>
       <Text style={styles.count}>{count}</Text>
       <View style={styles.buttons}>
-        <Pressable
-          style={{...styles.button, flex: 1}}
+        <Button
+          mode="contained"
+          style={{...styles.button}}
           onPress={() => setCount(Math.max(count - 1, 0))}>
           <Text>-</Text>
-        </Pressable>
-        <Pressable
-          style={{...styles.button, flex: 2}}
+        </Button>
+        <Button
+          mode="contained"
+          style={{...styles.button}}
           onPress={() => setCount(0)}>
-          <Text>zeruj</Text>
-        </Pressable>
-        <Pressable
-          style={{...styles.button, flex: 1}}
+          <Text>Zeruj</Text>
+        </Button>
+        <Button
+          mode="contained"
+          style={{...styles.button}}
           onPress={() => setCount(count + 1)}>
           <Text>+</Text>
-        </Pressable>
+        </Button>
       </View>
     </View>
   );
@@ -54,9 +58,5 @@ const styles = StyleSheet.create({
     gap: 18,
     paddingHorizontal: 18,
   },
-  button: {
-    borderWidth: 1,
-    borderColor: 'black',
-    alignItems: 'center',
-  },
+  button: {},
 });
